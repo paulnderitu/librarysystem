@@ -1,11 +1,15 @@
 
 <h1>Books</h1>
 
+<h1><%= @patron.name() %></h1>
+
+  <% if @patron.books().any?() %>
+
     <h3>Here are all the books with this patron:</h3>
 
     <ul>
       <% @patron.books().each() do |book| %>
-        <li><%= book.title() %> </li>
+        <li><%= book.title() %> <%= book.author() %></li>
       <% end %>
     </ul>
 
@@ -13,17 +17,7 @@
       <p>There are no books with this patron!</p>
     <% end %>
 
-  <div class="container">
-    <a href="/"><button class="btn">Home</a>
-  </div>
-
-
+<p><a href="/patrons/<%= @patron.id() %>/edit">Edit<%= @patron.name() %>patron</a></p>
 
   <hr>
-
-  <div class="container">
-    <a href="/">Home</a>
-    <a href="/patrons">View All Patrons</a>
-    <a href="/patrons/new">Add a New Patron</a>
-    <a href="/patrons/new">Add a New Book</a>
-  </div>
+    <a href="/">Return to Main Page</a>

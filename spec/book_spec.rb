@@ -6,7 +6,6 @@ describe(Book)do
       expect(Book.all()).to(eq([]))
     end
   end
-end
 
 describe("#save")do
   it("saves a new book")do
@@ -44,3 +43,4 @@ describe("#==") do
     expect(book1).to(eq(book2))
   end
   end
+end
